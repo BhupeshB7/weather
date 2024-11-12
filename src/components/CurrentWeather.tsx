@@ -58,7 +58,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
             <div className="animate-pulse h-6 bg-gray-300 rounded-md w-3/4 mx-auto"></div>
           ) : (
             <>
-              <CardTitle className="text-3xl font-bold tracking-wider ">
+              <CardTitle className="text-3xl font-bold tracking-wider locationName">
                 {locationName || data.name}
               </CardTitle> 
             </>
@@ -123,15 +123,15 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                   <WiThermometer
                     size={32}
                     className={` ${
-                      theme === "dark" ? "text-blue-400" : "text-blue-700"
+                      theme === "dark" ? "text-blue-400" : "text-blue-600"
                     }`}
                   />
                 </motion.div>
                 <span className="text-sm ">
-                  <strong className="opacity-70"> Feels Like: </strong>
+                  <strong className="opacity-70 text-blue-500"> Feels Like: </strong>
                   <b
                     className={`text-2xl ${
-                      theme === "dark" ? "text-blue-400" : "text-blue-700"
+                      theme === "dark" ? "text-blue-400" : "text-blue-600"
                     }`}
                   >
                     {Math.round(feels_like)}°C
@@ -173,8 +173,16 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                 >
                   <WiStrongWind size={32} />
                 </motion.div>
-
-                <span className="text-lg">Wind: {speed} m/s</span>
+                <span className="text-sm ">
+                  <strong className="opacity-70 text-amber-600"> Wind: </strong>
+                  <b
+                    className={`text-2xl ${
+                      theme === "dark" ? "text-amber-200" : "text-amber-600"
+                    }`}
+                  >
+                    {speed} m/s
+                  </b>{" "}
+                </span> 
               </motion.div>
 
               {/* Current Temperature */}
@@ -191,9 +199,16 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                 >
                   <WiThermometer size={32} />
                 </motion.div>
-                <span className="text-lg">
-                  Current Temp: {Math.round(temp)}°C
-                </span>
+                <span className="text-sm ">
+                  <strong className="opacity-70 text-amber-600"> Current Temp: </strong>
+                  <b
+                    className={`text-3xl ${
+                      theme === "dark" ? "text-amber-200" : "text-amber-600"
+                    }`}
+                  >
+                    {Math.round(temp)}°C
+                  </b>{" "}
+                </span>  
               </motion.div>
 
               {/* Pressure */}
@@ -210,7 +225,16 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                 >
                   <WiThermometer size={32} />
                 </motion.div>
-                <span className="text-lg">Pressure: {pressure} hPa</span>
+                <span className="text-sm ">
+                  <strong className="opacity-70 text-green-600"> Pressure: </strong>
+                  <b
+                    className={`text-2xl ${
+                      theme === "dark" ? "text-green-400" : "text-green-600"
+                    }`}
+                  >
+                    {pressure} hPa
+                  </b>{" "}
+                </span> 
               </motion.div>
             </>
           )}
