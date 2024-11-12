@@ -11,7 +11,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <ThemeProvider defaultTheme="system">
+        <ThemeProvider defaultTheme="dark">
           <Layout>
             <Routes>
               <Route path="/" element={<WeatherDashboard />} />

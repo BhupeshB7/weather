@@ -171,7 +171,9 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                   whileHover={{ rotate: 15, scale: 1.3 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <WiStrongWind size={32} />
+                  <WiStrongWind size={32}  className={` ${
+                      theme === "dark" ? "text-amber-200" : "text-amber-600"
+                    }`}/>
                 </motion.div>
                 <span className="text-sm ">
                   <strong className="opacity-70 text-amber-600"> Wind: </strong>
@@ -197,7 +199,9 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                   whileHover={{ rotate: -15, scale: 1.3 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <WiThermometer size={32} />
+                  <WiThermometer size={32} className={` ${
+                      theme === "dark" ? "text-amber-200" : "text-amber-600"
+                    }`}/>
                 </motion.div>
                 <span className="text-sm ">
                   <strong className="opacity-70 text-amber-600"> Current Temp: </strong>
@@ -223,12 +227,14 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
                   whileHover={{ rotate: 15, scale: 1.3 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <WiThermometer size={32} />
+                  <WiThermometer size={32} className={` ${
+                      theme === "dark" ? "text-green-300" : "text-green-600"
+                    }`}/>
                 </motion.div>
                 <span className="text-sm ">
                   <strong className="opacity-70 text-green-600"> Pressure: </strong>
                   <b
-                    className={`text-2xl ${
+                    className={`text-xl ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}
                   >
